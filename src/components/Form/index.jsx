@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react"
 import { get_options } from "../../core/api/get_options"
 
+import "./styles.css"
+
 function Form() {
     const categoryEl = useRef()
     const amountEl = useRef()
