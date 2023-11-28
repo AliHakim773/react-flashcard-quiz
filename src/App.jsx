@@ -19,7 +19,9 @@ function App() {
 
     return (
         <div className='app'>
-            <FlashCardList flashCards={flashCards} />
+            <div className='container'>
+                <FlashCardList flashCards={flashCards} />
+            </div>
         </div>
     )
 }
