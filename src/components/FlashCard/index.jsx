@@ -13,8 +13,10 @@ function FlashCard({ flashCard }) {
             <div className='front'>
                 {flashCard.question}
                 <div className='flashcard-options'>
-                    {flashCard.options.map((option) => (
-                        <div className='flashcard-option'>{option}</div>
+                    {flashCard?.options.map((option, i) => (
+                        <div key={i} className='flashcard-option'>
+                            {option}
+                        </div>
                     ))}
                 </div>
             </div>
