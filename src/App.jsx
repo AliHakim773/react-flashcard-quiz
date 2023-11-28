@@ -14,14 +14,17 @@ function App() {
     const [flashCards, setFlashCards] = useState([])
     const [categories, setCategories] = useState([])
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
+        const result = await get_questions(
+            amountEl.current.value,
+            categoryEl.current.value
+        )
+        setFlashCards(result)
     }
 
     useEffect(() => {
         const getQuestions = async () => {
-            const result = await get_questions()
-            setFlashCards(result)
             const getCategories = await get_options()
             setCategories(getCategories)
         }
