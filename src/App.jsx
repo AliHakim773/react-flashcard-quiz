@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
+
 import FlashCardList from "./components/FlashCradList"
 
-import "./styles/index.css"
 import { get_questions } from "./core/api/get_answers"
-import axios from "axios"
+
+import "./styles/index.css"
 
 function App() {
     const [flashCards, setFlashCards] = useState([])
