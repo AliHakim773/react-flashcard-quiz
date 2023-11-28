@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react"
-import { setMaxHeight } from "../../core/helper/set_max_height"
 
 import "./styles.css"
 
@@ -10,8 +9,14 @@ function FlashCard({ flashCard }) {
     const frontEl = useRef()
     const backEl = useRef()
 
+    const setMaxHeight = () => {
+        const frontHeight = frontEl.current.getBoundingClientRect().height
+        const backHeight = backEl.current.getBoundingClientRect().height
+        return Math.max(frontHeight, backHeight, 100)
+    }
+    
     useEffect(() => {
-        setHeight(setMaxHeight(frontEl.current, backEl.current))
+        setHeight(setMaxHeight())
     }, [flashCard.answer, flashCard.answer, flashCard.answer])
     useEffect(() => {
         window.addEventListener("resize", setMaxHeight)
