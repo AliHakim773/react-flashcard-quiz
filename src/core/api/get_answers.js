@@ -31,6 +31,6 @@ export const get_questions = async (amount, category) => {
             })
         return result
     } catch (err) {
-        return err
+        console.log(err)
     }
 }

@@ -1,4 +1,3 @@
-import { decode_string } from "../helper/decode_string"
 import axios from "axios"
 
 export const get_options = async () => {
@@ -10,6 +9,6 @@ export const get_options = async () => {
             })
         return result
     } catch (err) {
-        return err
+        console.log(err)
     }
 }
